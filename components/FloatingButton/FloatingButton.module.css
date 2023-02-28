@@ -1,0 +1,35 @@
+/* .button-pulse {
+  animation-name: pulse;
+  animation-duration: 5s;
+  animation-timing-function: ease-out;
+  animation-iteration-count: infinite;
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+  }
+} */
+
+.banner_arrow{
+    margin: auto;
+    background-color: white;
+    background-image: url(/images/material-arrow-downward.svg);
+    background-repeat: no-repeat;
+    -webkit-background-position: center center;
+    background-position: center center;
+    border: 2px solid #FF7BAC;
+    border-radius: 100%;
+    bottom: clamp(54px, 1vw, 100px);
+    height: 14px;
+    left: calc(50% - 7px - 21px);
+    padding: 21px;
+    position: absolute;
+    width: 14px;    
+}

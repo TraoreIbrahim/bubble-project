@@ -1,4 +1,4 @@
-:root {
+/* :root {
   --max-width: 1100px;
   --border-radius: 12px;
   --font-mono: ui-monospace, Menlo, Monaco, 'Cascadia Mono', 'Segoe UI Mono',
@@ -11,15 +11,13 @@
 
   --primary-glow: conic-gradient(
     from 180deg at 50% 50%,
-    #16abff33 0deg,
-    #0885ff33 55deg,
-    #54d6ff33 120deg,
-    #0071ff33 160deg,
+    #FCD2D9 0deg,
+  
     transparent 360deg
   );
   --secondary-glow: radial-gradient(
     rgba(255, 255, 255, 1),
-    rgba(255, 255, 255, 0)
+    #FCD2D9
   );
 
   --tile-start-rgb: 239, 245, 249;
@@ -71,7 +69,16 @@
     --card-rgb: 100, 100, 100;
     --card-border-rgb: 200, 200, 200;
   }
-}
+} */
+@font-face {
+  font-family: "Bubble";
+  src: url("../public/font/bubble.ttf") 
+  }
+@font-face {
+  font-family: "Baloo";
+  src: url("../public/font/Baloo-Regular.ttf") 
+  }
+  @import url('https://fonts.googleapis.com/css2?family=Architects+Daughter&family=Baloo+2:wght@400;500;600;700;800&display=swap');
 
 * {
   box-sizing: border-box;
@@ -90,9 +97,9 @@ body {
   background: linear-gradient(
       to bottom,
       transparent,
-      rgb(var(--background-end-rgb))
+      #FCD2D9
     )
-    rgb(var(--background-start-rgb));
+    #FCD2D9;
 }
 
 a {
@@ -103,5 +110,24 @@ a {
 @media (prefers-color-scheme: dark) {
   html {
     color-scheme: dark;
+  }
+}
+
+.button-pulse {
+  animation-name: pulse;
+  animation-duration: 3s;
+  animation-timing-function: ease-out;
+  animation-iteration-count: infinite;
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.5);
+  }
+  100% {
+    transform: scale(1);
   }
 }

@@ -1,0 +1,78 @@
+.about{
+   display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    margin-top: 50px;
+    min-height: 100vh;
+    overflow: hidden;
+    /* background-image: url('../../public/images/splash.png');
+    background-position: 100% 100%;
+    background-size: contain;
+    background-repeat: no-repeat;
+    height: 100vh; */
+    position: relative
+}
+.about_wrapper{
+width: 100%;
+display: flex;
+}
+.about_textBox{
+    max-width: 600px;
+}
+.about_text{
+    font-size: 2em;
+     font-family: 'Baloo';
+    color: white;
+    line-height: 1.4em;
+    font-weight: 500;
+}
+/* .about_span{
+   color: #FF7BAC;
+    font-size: 1.1em;
+    font-weight: 800;
+    font-family: 'Bubble';
+} */
+.about_text_p{
+    letter-spacing: 2px;
+    font-size: 1.1em;
+    font-family: 'roboto';
+    color: #fff;
+    line-height: 1.4em;
+}
+/* .about_imgBox{
+
+    display: flex;
+    width: 800px;
+    justify-content: flex-end;
+    background-image: url('../../public/images/splash.png');
+    min-height: 800px;
+    background-position: left;
+    background-size: cover;
+    background-repeat: no-repeat;
+    } */
+.about_img{
+    /* max-width: 600px; */
+    position: absolute;
+    right: -200px;
+    z-index: -1;
+
+    }
+.about_listBox{
+
+    /* display: flex;
+    margin: 20px 0;
+    color : #fff */
+}
+.about_list{
+    display: flex;
+    margin: 20px 0;
+    color : #fff
+}
+.about_list_text{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: 20px  0 10px 20px ;
+    color : #fff;
+}

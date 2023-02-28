@@ -1,0 +1,25 @@
+.header{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    color: white;
+    font-size: 1.5rem;
+    max-height: 100px;
+    font-family: 'Baloo';
+}
+.header_navbar{
+    display: flex;
+    align-items: center;
+}
+.header_logo{
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+.header_navbar_li{
+margin-left: 30px ;
+list-style: none;
+cursor: pointer;
+min-width: fit-content;
+}
