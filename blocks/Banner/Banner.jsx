@@ -1,6 +1,6 @@
 import React from "react";
 import styles from "../Banner/Banner.module.css";
-import FloatingButton from "../../components/FloatingButton/FloatingButton";
+import FloatingButton from "../../components/floatingButton/FloatingButton";
 
 const Banner = () => {
   return (

@@ -26,9 +26,9 @@
     background-position: center center;
     border: 2px solid #FF7BAC;
     border-radius: 100%;
-    bottom: clamp(54px, 1vw, 100px);
+    /* bottom: clamp(54px, 1vw, 100px);
     height: 14px;
-    left: calc(50% - 7px - 21px);
+    left: calc(50% - 7px - 21px); */
     padding: 21px;
     position: absolute;
     width: 14px;    

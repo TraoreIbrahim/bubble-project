@@ -5,47 +5,47 @@
     width: 100%;
     margin-top: 50px;
     position: relative;
+      padding: 2rem 6rem;
 }
 .banner_wrapper{
 width: 100%;
 display: flex;
 }
 .banner_textBox{
-    max-width: 600px;
+    width: 55%;
 }
 .banner_text{
-    font-size: 4em;
+    font-size: 2.75rem;
      font-family: 'Baloo';
-  /*  font-family: 'Poppins', sans-serif; */
-    /* font-family: 'Fredericka the Great', cursive; */
     color: white;
-    line-height: 1.4em;
+    line-height: 1.3em;
     font-weight: 500;
 }
 .banner_span{
     /* letter-spacing: 2px; */
    color: #FF7BAC;
-    font-size: 1.1em;
+    font-size: 3rem;
     font-weight: 800;
     font-family: 'Bubble';
 }
 .banner_text_p{
     letter-spacing: 2px;
-    font-size: 1.1em;
+    font-size: 1em;
     /* font-weight: 800; */
-    font-family: 'roboto';
+    font-family: 'Montserrat', sans-serif;
     /* color: #FF7BAC; */
-    color: #FF7BAC;
+    /* color: #FF7BAC; */
+    color: rgb(104, 31, 104);
     line-height: 1.4em;
 }
 .banner_imgBox{
 
     display: flex;
-    width: 600px;
+    width: 45%;
     justify-content: flex-end;
     }
 .banner_img{
-    max-width: 600px;
+    width: 100%;
     }
 
 .banner_arrow{

@@ -4,75 +4,99 @@
     justify-content: space-between;
     width: 100%;
     margin-top: 50px;
-    min-height: 100vh;
-    overflow: hidden;
-    /* background-image: url('../../public/images/splash.png');
-    background-position: 100% 100%;
-    background-size: contain;
-    background-repeat: no-repeat;
-    height: 100vh; */
+    min-height: 80vh;
+    padding: 2rem 6rem;
     position: relative
 }
 .about_wrapper{
 width: 100%;
 display: flex;
+position: relative
 }
 .about_textBox{
-    max-width: 600px;
+    max-width: 40%;
+    position: absolute;
+    z-index: 20;
 }
 .about_text{
     font-size: 2em;
-     font-family: 'Baloo';
-    color: white;
+    font-family: 'Baloo';
+    /* color: white; */
+    color: rgb(104, 31, 104);
     line-height: 1.4em;
     font-weight: 500;
 }
-/* .about_span{
-   color: #FF7BAC;
-    font-size: 1.1em;
-    font-weight: 800;
-    font-family: 'Bubble';
-} */
 .about_text_p{
     letter-spacing: 2px;
     font-size: 1.1em;
     font-family: 'roboto';
-    color: #fff;
+    /* color: #fff; */
+    color: rgb(104, 31, 104);
+    font-weight: 400;
     line-height: 1.4em;
+    font-family: 'Montserrat', sans-serif;
 }
-/* .about_imgBox{
-
-    display: flex;
-    width: 800px;
-    justify-content: flex-end;
-    background-image: url('../../public/images/splash.png');
-    min-height: 800px;
-    background-position: left;
-    background-size: cover;
-    background-repeat: no-repeat;
-    } */
 .about_img{
-    /* max-width: 600px; */
-    position: absolute;
-    right: -200px;
+    max-width: 60%; 
+    position: fixed;
+    /* position: absolute; */
+    right: 0px;
+    top : 10%;
     z-index: -1;
+/* position : relative; */
+object-fit: cover;
+/* right: -200px; */
+
+
 
     }
 .about_listBox{
-
-    /* display: flex;
-    margin: 20px 0;
-    color : #fff */
+    max-width: 50%;
+    right: 0;
+    padding: 40px;
+    position: absolute;
+    overflow: hidden; 
+    top: 50%;
+    right: 0;
+    transform: translate(0%, -50%);
+    
 }
 .about_list{
     display: flex;
-    margin: 20px 0;
-    color : #fff
+    margin: 0 0 20px 0;
+
+    
 }
 .about_list_text{
     display: flex;
     flex-direction: column;
     justify-content: center;
     margin: 20px  0 10px 20px ;
-    color : #fff;
+    /* color : #fff; */
+    color: rgb(104, 31, 104);
+    
+}
+
+.about_list_img{
+    object-fit: contain;
+}
+
+.about_list_text_h3{
+color: #fff;
+display: inline-block;
+width: fit-content;
+font-size: 1.5rem;
+text-decoration: "underline";
+font-family: "Baloo";
+border-bottom: 1px rgb(104, 31, 104) solid;
+}
+.about_list_text_p{
+/* color: #fff; */
+    letter-spacing: 1;
+    
+    /* font-size: "1.75rem"; */
+   /* text-decoration: "underline"; */
+    font-family: "Baloo";
+    
+    /* font-weight: 300; */
 }

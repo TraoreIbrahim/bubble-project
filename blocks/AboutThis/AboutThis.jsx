@@ -1,6 +1,6 @@
 import React from "react";
 import styles from "../AboutThis/AboutThis.module.css";
-import Button from "../../components/Button/Button";
+import Button from "../../components/button/Button";
 
 const AboutThis = () => {
   return (
@@ -15,38 +15,56 @@ const AboutThis = () => {
           stations de ski. Vos vacances et souvenirs de voyage méritent mieux
           que ça !
         </p>
-        <Button text="Let's Go ! " />
+        <div style={{ display: "flex", justifyContent: "center" }}>
+          <Button text="Let's Go ! " />
+        </div>
       </div>
-      <ul className={styles.about_listBox}>
-        <li className={styles.about_list}>
-          <img src="/images/plane.png" alt="plane icon" />
-          <div className={styles.about_list_text}>
-            <h3>Gratuit</h3>
-            <p>Service 100% gratuit, alors qu’attendez-vous pour essayer ?</p>
-          </div>
-        </li>
-        <li className={styles.about_list}>
-          <img src="/images/check.png" alt="check icon" />
-          <div className={styles.about_list_text}>
-            <h3>Ecologique</h3>
-            <p>
-              Fini le papier, envoyez vos invitations sans détruire des arbres !
-            </p>
-          </div>
-        </li>
-        <li className={styles.about_list}>
-          <img src="/images/stars.png" alt="stars icon" />
-          <div className={styles.about_list_text}>
-            <h3>100% personnalisé</h3>
-            <p>Faites des cartes à votre image de façon ludique et simple.</p>
-          </div>
-        </li>
-      </ul>
       <img
         className={styles.about_img}
         src="/images/splash.png"
         alt="splash gum"
       />
+      <ul className={styles.about_listBox}>
+        <li className={styles.about_list}>
+          <img
+            className={styles.about_list_img}
+            src="/images/plane.png"
+            alt="plane icon"
+          />
+          <div className={styles.about_list_text}>
+            <h3 className={styles.about_list_text_h3}>Gratuit</h3>
+            <p className={styles.about_list_text_p}>
+              Service 100% gratuit, alors qu’attendez-vous pour essayer ?
+            </p>
+          </div>
+        </li>
+        <li className={styles.about_list}>
+          <img
+            className={styles.about_list_img}
+            src="/images/check.png"
+            alt="check icon"
+          />
+          <div className={styles.about_list_text}>
+            <h3 className={styles.about_list_text_h3}>Ecologique</h3>
+            <p className={styles.about_list_text_p}>
+              Fini le papier, envoyez vos invitations sans détruire des arbres !
+            </p>
+          </div>
+        </li>
+        <li className={styles.about_list}>
+          <img
+            className={styles.about_list_img}
+            src="/images/stars.png"
+            alt="stars icon"
+          />
+          <div className={styles.about_list_text}>
+            <h3 className={styles.about_list_text_h3}>100% personnalisé</h3>
+            <p className={styles.about_list_text_p}>
+              Faites des cartes à votre image de façon ludique et simple.
+            </p>
+          </div>
+        </li>
+      </ul>
 
       {/* <a href="#" className={styles.banner_arrow}></a> */}
     </main>

@@ -2,10 +2,10 @@ import Head from "next/head";
 import Image from "next/image";
 import { Inter } from "next/font/google";
 import styles from "@/styles/Home.module.css";
-import Header from "../blocks/Header/Header";
-import Banner from "../blocks/Banner/Banner";
-import AboutThis from "../blocks/AboutThis/AboutThis";
-import FloatingButton from "@/components/FloatingButton/FloatingButton";
+import Header from "../blocks/header/Header";
+import Banner from "../blocks/banner/Banner";
+import AboutThis from "../blocks/aboutThis/AboutThis";
+import Process from "../blocks/process/Process";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -22,6 +22,7 @@ export default function Home() {
         <Header />
         <Banner />
         <AboutThis />
+        <Process />
         {/* <div className={styles.description}>
           <p>
             Get started by editing&nbsp;
