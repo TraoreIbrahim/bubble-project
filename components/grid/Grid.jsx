@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import Image from "next/image";
 
 import Button from "../button/Button";
 import styles from "./Grid.module.css";
@@ -115,7 +116,7 @@ const Grid = () => {
         </div>
         <div className={styles.colorEditor}>
           <div className={styles.inputColorLine}>
-            {colors.map((color) => (
+            {colors.map((color, key) => (
               <div
                 className={
                   color === colorSelected
@@ -123,6 +124,7 @@ const Grid = () => {
                     : styles.inputColorContainer
                 }
                 style={{ backgroundColor: color }}
+                key={key}
                 onClick={() => setColor(color)}
               ></div>
             ))}
@@ -192,14 +194,14 @@ const Grid = () => {
           <>
             <div className={styles.imageTitle}>
               <span className={styles.span}>4.</span>
-              <p className={styles.p}>l'image.</p>
+              <p className={styles.p}>ln&apos;image.</p>
             </div>
             <div className={styles.imageDescription}>
               <AliceCarousel
                 responsive={responsive}
                 mouseTracking
                 items={images.map((image) => (
-                  <img
+                  <Image
                     key={image.id}
                     src={image.urls.small}
                     alt={image.alt_description}
@@ -220,10 +222,12 @@ const Grid = () => {
           <>
             <div className={styles.viewTitle}>
               <span className={styles.span}>5.</span>
-              <p className={styles.p}>l'aperçu.</p>
+              <p className={styles.p}>ln&apos;aperçu.</p>
             </div>
             <div className={styles.viewDescription}>
-              <p>Voici l'aperçu de votre Bubble Card avant téléchargement :</p>
+              <p>
+                Voici ln&apos;aperçu de votre Bubble Card avant téléchargement :
+              </p>
             </div>
             <div className={styles.imageEditor}></div>
             <div className={styles.viewEditor}>
@@ -238,7 +242,7 @@ const Grid = () => {
                   }}
                   id="content"
                 >
-                  <img
+                  <Image
                     src={selectedImage.urls.small}
                     alt=""
                     className={styles.cardImage}
@@ -269,7 +273,7 @@ const Grid = () => {
           <>
             <div className={styles.uploadTitle}>
               <span className={styles.span}>6.</span>
-              <p className={styles.p}>l'upload.</p>
+              <p className={styles.p}>ln&apos;upload.</p>
             </div>
             <div className={styles.uploadDescription}>
               Récupérer votre Bubble Card !
@@ -285,7 +289,7 @@ const Grid = () => {
               <div className={styles.thanksDescription}>
                 Votre Bubble Card a été téléchargée ! <br></br>Merci 😄
                 <div className={styles.img_wrapper}>
-                  <img
+                  <Image
                     className={styles.banner_img}
                     src="/images/girlNdog2.png"
                     alt="girl gum"

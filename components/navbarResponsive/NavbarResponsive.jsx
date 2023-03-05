@@ -13,7 +13,7 @@ const NavbarResponsive = () => {
         <Link href="#about">About</Link>
       </li>
       <li>
-        <Link href="#process">Let's go</Link>
+        <Link href="#process">Letn&apos;s go</Link>
       </li>
     </ul>
   );

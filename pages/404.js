@@ -26,9 +26,9 @@ const pageNotFound404 = () => {
       </h1>
       <br></br>
       <p>
-        Veuillez vérifier que l'URL est correcte ou{" "}
+        Veuillez vérifier que ln&apos;URL est correcte ou{" "}
         <Link style={{ textDecoration: "underline" }} href="/">
-          retourner à la page d'accueil
+          retourner à la page dn&apos;accueil
         </Link>
         .
       </p>
