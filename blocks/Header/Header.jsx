@@ -45,15 +45,16 @@ const Header = () => {
         </a>
         {checkWidth > 900 ? (
           <ul className={styles.header_navbar}>
-            <li className={styles.header_navbar_li}>
-              <Link href="#">Home</Link>
-            </li>
-            <li className={styles.header_navbar_li}>
-              <Link href="#about">About</Link>
-            </li>
-            <li className={styles.header_navbar_li}>
-              <Link href="#process">Let's go</Link>
-            </li>
+            <Link href="#">
+              {" "}
+              <li className={styles.header_navbar_li}>Home</li>
+            </Link>
+            <Link href="#about">
+              <li className={styles.header_navbar_li}>About</li>
+            </Link>
+            <Link href="#process">
+              <li className={styles.header_navbar_li}>Let's go</li>
+            </Link>
           </ul>
         ) : !toggleNav ? (
           <>

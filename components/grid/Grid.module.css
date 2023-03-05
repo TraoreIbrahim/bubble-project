@@ -12,6 +12,7 @@
       "messageEditor messageEditor messageEditor"
       "themeTitle themeTitle themeTitle"
       "themeDescription themeDescription themeDescription"
+      "themeEditor themeEditor themeEditor"
       "imageTitle imageTitle imageTitle"
       "imageDescription imageDescription imageDescription"
       "imageEditor imageEditor imageEditor"
@@ -21,41 +22,48 @@
       "uploadTitle uploadTitle uploadTitle"
       "uploadDescription uploadDescription uploadDescription"
       "uploadEditor uploadEditor uploadEditor"
-      "button button button ";
+      "button button button "
+      "thanksDescription thanksDescription thanksDescription ";
   }
   
   .colorTitle { grid-area: colorTitle; }
   
-  .colorDescription { grid-area: colorDescription;color: rgb(255, 255, 255); letter-spacing: 1px;  }
+  .colorDescription { grid-area: colorDescription;color: rgb(255, 255, 255); letter-spacing: 1px;     font-size: 1em;
+    font-family: 'Montserrat', sans-serif; }
   
   .colorEditor { grid-area: colorEditor; margin: 20px auto; display: flex; justify-content: space-between; flex-direction: column; flex-wrap: wrap; }
   
   .messageTitle { grid-area: messageTitle; }
   
-  .messageDescription { grid-area: messageDescription; color: rgb(255, 255, 255); letter-spacing: 1px; }
+  .messageDescription { grid-area: messageDescription; color: rgb(255, 255, 255); letter-spacing: 1px;     font-size: 1em;
+    font-family: 'Montserrat', sans-serif;}
   
   .messageEditor { grid-area: messageEditor; border-radius: 8px; height: 80px; border: none; margin: 20px 0; box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px; }
   .themeTitle { grid-area: themeTitle; }
   
-  .themeDescription { grid-area: themeDescription; }
+  .themeDescription { grid-area: themeDescription; color: rgb(255, 255, 255);letter-spacing: 1px;     font-size: 1em;
+    font-family: 'Montserrat', sans-serif;}
+    .themeEditor { 
+      grid-area: themeEditor; 
+      border-radius: 8px; 
+      border: none; 
+      margin: 20px 0; 
+      box-shadow: rgba(100, 100, 111, 0.2)  }
+    
   .imageTitle { grid-area: imageTitle; }
   
   .imageDescription { grid-area: imageDescription; }
   
-  .themeTitle { grid-area: themeTitle; }
+  .thanksDescription { grid-area: thanksDescription; font-family: 'Baloo'; text-align: center; font-size: 2em; margin: 2rem;}
   
-  .themeDescription { grid-area: themeDescription; }
-  
-  .themeEditor { 
-    grid-area: themeEditor; 
-    border-radius: 8px; 
-    height: 30px; border: none; 
-    margin: 20px 0; 
-    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px; }
   
   .uploadTitle { grid-area: uploadTitle; }
   
-  .uploadDescription { grid-area: uploadDescription; }
+  .uploadDescription { grid-area: uploadDescription;
+    letter-spacing: 1px;     
+    font-size: 1em;
+    color: #fff;
+    font-family: 'Montserrat', sans-serif; }
   
   .uploadEditor { grid-area: iuploadEditor; }
   .viewTitle { grid-area: viewTitle; }
@@ -200,7 +208,6 @@
     }
   }
   .card {
-    /* background-color: #fff; */
     border-radius: 20px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
     padding: 20px;
@@ -211,8 +218,6 @@
     border-radius: 50%;
     display: block;
     margin: 0 auto;
-    /* max-width: 600px;
-    max-height: 600px; */
     width: 200px;
     height: 200px;
     object-fit: cover;

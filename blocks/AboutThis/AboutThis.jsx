@@ -44,8 +44,8 @@ const AboutThis = () => {
         <li className={styles.about_list}>
           <img
             className={styles.about_list_img}
-            src="/images/check.png"
-            alt="check icon"
+            src="/images/tree.png"
+            alt="tree icon"
           />
           <div className={styles.about_list_text}>
             <h3 className={styles.about_list_text_h3}>Ecologique</h3>
@@ -69,8 +69,6 @@ const AboutThis = () => {
           </div>
         </li>
       </ul>
-
-      {/* <a href="#" className={styles.banner_arrow}></a> */}
     </main>
   );
 };

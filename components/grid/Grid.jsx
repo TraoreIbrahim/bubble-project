@@ -17,7 +17,9 @@ const Grid = () => {
   const [selectedTheme, setSelectedTheme] = useState(null);
   const [message, setMessage] = useState("");
   const [imageLoaded, setImageLoaded] = useState(false);
+  const [upload, setUpload] = useState(false);
 
+  //   colors
   const colors = [
     "#dff6e8",
     "#bcc7f4",
@@ -28,6 +30,8 @@ const Grid = () => {
     "#FFC09F",
     "#f4aed6",
   ];
+
+  //   message
   const modules = {
     toolbar: {
       container: [
@@ -42,16 +46,23 @@ const Grid = () => {
     },
   };
 
+  const onChangeMessage = (e) => {
+    setMessage(e);
+  };
+
+  // theme
+  const handleThemeChange = (event) => {
+    console.log(event.target.value);
+    setSelectedTheme(event.target.value);
+  };
+
+  // images
   const responsive = {
     0: { items: 1 },
     568: { items: 2 },
     1024: { items: 3 },
   };
 
-  const handleThemeChange = (event) => {
-    console.log(event.target.value);
-    setSelectedTheme(event.target.value);
-  };
   useEffect(() => {
     const fetchImages = async () => {
       const result = await axios.get(
@@ -66,6 +77,7 @@ const Grid = () => {
     setSelectedImage(image);
   };
 
+  // upload
   const handleDownload = (e) => {
     if (imageLoaded) {
       e.preventDefault();
@@ -81,13 +93,9 @@ const Grid = () => {
         link.href = canvas.toDataURL("image/png");
         link.click();
       });
+      setUpload(true);
     }
   };
-
-  const onChangeMessage = (e) => {
-    setMessage(e);
-  };
-
   const handleImageLoad = () => {
     setImageLoaded(true);
   };
@@ -127,6 +135,9 @@ const Grid = () => {
               <span className={styles.span}>2.</span>
               <p className={styles.p}>le message.</p>
             </div>
+            <div className={styles.messageDescription}>
+              <p>Tapez votre message :</p>
+            </div>
             <div className={styles.messageEditor}>
               <ReactQuill
                 style={{
@@ -157,6 +168,9 @@ const Grid = () => {
               <p className={styles.p}>le thème.</p>
             </div>
             <div className={styles.themeDescription}>
+              <p>Choisissez le thème que vous souhaitez :</p>
+            </div>
+            <div className={styles.themeEditor}>
               <select
                 className={styles.themeSelect}
                 name="themes"
@@ -208,7 +222,9 @@ const Grid = () => {
               <span className={styles.span}>5.</span>
               <p className={styles.p}>l'aperçu.</p>
             </div>
-            <div className={styles.viewDescription}></div>
+            <div className={styles.viewDescription}>
+              <p>Voici l'aperçu de votre Bubble Card avant téléchargement :</p>
+            </div>
             <div className={styles.imageEditor}></div>
             <div className={styles.viewEditor}>
               {selectedImage && (
@@ -265,16 +281,21 @@ const Grid = () => {
                 onClick={handleDownload}
               ></Button>
             </div>
+            {upload && (
+              <div className={styles.thanksDescription}>
+                Votre Bubble Card a été téléchargée ! <br></br>Merci 😄
+                <div className={styles.img_wrapper}>
+                  <img
+                    className={styles.banner_img}
+                    src="/images/girlNdog2.png"
+                    alt="girl gum"
+                  />
+                </div>
+              </div>
+            )}
           </>
         )}
       </form>
-      <div className={styles.img_wrapper}>
-        <img
-          className={styles.banner_img}
-          src="/images/girlNdog2.png"
-          alt="girl gum"
-        />
-      </div>
     </>
   );
 };

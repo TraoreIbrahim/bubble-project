@@ -17,7 +17,8 @@ const Footer = () => {
         Une nouvelle façon de créer des cartes virtuelles.
       </p>
       <p className={styles.copyright}>
-        &copy; {new Date().getFullYear()} BubbleCards. Tous droits réservés.
+        &copy; {new Date().getFullYear()} BubbleCards by Jess. Tous droits
+        réservés.
       </p>
     </footer>
   );
