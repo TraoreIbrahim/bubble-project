@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { useState, useEffect } from "react";
 import styles from "./FloatingButton.module.css";
 
@@ -11,10 +12,10 @@ const FloatingButton = () => {
   }, []);
   return (
     <div style={{ width: "100%", display: "flex", justifyContent: "center" }}>
-      <a
-        href="#"
+      <Link
+        href="#process"
         className={`${styles.banner_arrow} ${isPulsing ? "button-pulse" : ""}`}
-      ></a>
+      ></Link>
     </div>
   );
 };

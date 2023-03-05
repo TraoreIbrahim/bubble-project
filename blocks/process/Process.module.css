@@ -7,5 +7,29 @@
         #FCD2D9
       )
       #FCD2D9;
+    background: linear-gradient(
+        to bottom,
+        transparent,
+        #FCD2D9
+      )
+      #ff7bac;
       color: #FF7BAC;
+      /* position: absolute; */
+      z-index: -1000;
+      
+}
+.about_img{
+    max-width: 60%; 
+    position: fixed;
+    right: 0px;
+    top : 10%;
+    z-index: -1;
+object-fit: cover;
+    }
+
+/* Tablet and smartphone*/
+@media (max-width: 768px){
+    .process{
+        padding: 2rem;
+    }
 }

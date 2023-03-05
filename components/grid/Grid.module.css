@@ -10,40 +10,54 @@
       "messageTitle messageTitle messageTitle"
       "messageDescription messageDescription messageDescription"
       "messageEditor messageEditor messageEditor"
-      "imageTitle imageTitle ."
+      "themeTitle themeTitle themeTitle"
+      "themeDescription themeDescription themeDescription"
+      "imageTitle imageTitle imageTitle"
       "imageDescription imageDescription imageDescription"
       "imageEditor imageEditor imageEditor"
       "viewTitle viewTitle ."
       "viewDescription viewDescription ."
       "viewEditor viewEditor viewEditor"
-      "emailTitle emailTitle emailTitle"
-      "emailDescription emailDescription emailDescription"
-      "emailEditor emailEditor emailEditor"
-      "button . .";
+      "uploadTitle uploadTitle uploadTitle"
+      "uploadDescription uploadDescription uploadDescription"
+      "uploadEditor uploadEditor uploadEditor"
+      "button button button ";
   }
   
   .colorTitle { grid-area: colorTitle; }
   
-  .colorDescription { grid-area: colorDescription; }
+  .colorDescription { grid-area: colorDescription;color: rgb(255, 255, 255); letter-spacing: 1px;  }
   
-  .colorEditor { grid-area: colorEditor; margin: 20px auto; }
+  .colorEditor { grid-area: colorEditor; margin: 20px auto; display: flex; justify-content: space-between; flex-direction: column; flex-wrap: wrap; }
   
   .messageTitle { grid-area: messageTitle; }
   
-  .messageDescription { grid-area: messageDescription; }
+  .messageDescription { grid-area: messageDescription; color: rgb(255, 255, 255); letter-spacing: 1px; }
   
   .messageEditor { grid-area: messageEditor; border-radius: 8px; height: 80px; border: none; margin: 20px 0; box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px; }
+  .themeTitle { grid-area: themeTitle; }
   
+  .themeDescription { grid-area: themeDescription; }
   .imageTitle { grid-area: imageTitle; }
   
   .imageDescription { grid-area: imageDescription; }
   
-  .emailTitle { grid-area: emailTitle; }
+  .themeTitle { grid-area: themeTitle; }
   
-  .emailDescription { grid-area: emailDescription; }
+  .themeDescription { grid-area: themeDescription; }
   
-  .emailEditor { grid-area: emailEditor; border-radius: 8px; height: 30px; border: none; margin: 20px 0; box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px; }
+  .themeEditor { 
+    grid-area: themeEditor; 
+    border-radius: 8px; 
+    height: 30px; border: none; 
+    margin: 20px 0; 
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px; }
   
+  .uploadTitle { grid-area: uploadTitle; }
+  
+  .uploadDescription { grid-area: uploadDescription; }
+  
+  .uploadEditor { grid-area: iuploadEditor; }
   .viewTitle { grid-area: viewTitle; }
   
   .viewDescription { grid-area: viewDescription; }
@@ -52,9 +66,13 @@
   
   .viewEditor { grid-area: viewEditor; }
   
-  .button { grid-area: button; }
+  .buttonWrapper { 
+    grid-area: button;
+    display: "flex";
+    align-items: "center"  
+}
   
-  .colorTitle, .messageTitle, .emailTitle, .imageTitle, .viewTitle{
+  .colorTitle, .messageTitle, .emailTitle, .viewTitle, .themeTitle, .imageTitle,  .uploadTitle{
     display: flex;
     width: 100%;
     align-items: baseline;
@@ -62,7 +80,7 @@
   .colorTitle,.imageTitle,.viewTitle{
     justify-content: flex-start;
   }
-  .messageTitle, .emailTitle{
+  .messageTitle, .emailTitle, .imageTitle,  .uploadTitle{
     justify-content: flex-end;
   }
 
@@ -78,18 +96,24 @@
     font-family: 'Baloo';
     
   }
-  .messageDescription , .emailDescription{
+  .messageDescription , .emailDescription,  .uploadDescription{
     display: flex;
     justify-content: flex-end;
   }
 
   .inputColorContainer {
+    margin: 10px;
     position: relative;
     overflow: hidden;
-    width: 100px;
-    height: 100px;
+    width: 80px;
+    height: 80px;
     border: solid 2px #fff;
     border-radius: 100px;
+    display: flex;
+    flex-wrap: wrap;
+  }
+  .messageEditor{
+    height: auto;
   }
   
   .inputColor {
@@ -105,3 +129,101 @@
     justify-content: center;
     align-items: center;
   }
+  .inputColorLine{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+  .img_wrapper{
+    margin: auto;
+    display: flex;
+    justify-content: center;
+  }
+
+  .banner_img{
+    width: auto;
+    max-width: 300px;
+    margin: 2rem auto;
+}
+.buttonWrapper{
+    text-align: end;
+}
+.themeSelect{
+    border: none;
+    padding: 1rem;
+    border-radius: 10px;
+    margin: 1rem 0;
+    display: block;
+    min-width: 50%;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+}
+
+  @media (max-width: 768px){
+
+    .container {  
+        display: inherit;
+      }
+      .buttonWrapper { 
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+    justify-content: center;
+
+    }
+    .emailTitle{
+        display: inherit;
+    }
+    .emailEditor{
+        width: 100%;
+    }
+    .button{
+        margin: auto;
+    }
+    .banner_img{
+        width: auto;
+        max-width: 300px;
+        margin: 2rem auto;
+    }
+  }
+  .card {
+    /* background-color: #fff; */
+    border-radius: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    padding: 20px;
+    position: relative;
+  }
+  
+  .cardImage {
+    border-radius: 50%;
+    display: block;
+    margin: 0 auto;
+    /* max-width: 600px;
+    max-height: 600px; */
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+  }
+  
+  .cardText {
+    margin: 20px auto;
+    text-align: center;
+  }
+  
+  @media (max-width: 768px) {
+    .card {
+      padding: 10px;
+    }
+  
+    .card::before {
+      border-bottom: 20px solid #fff;
+      border-right: 20px solid transparent;
+      border-left: 20px solid #fff;
+      left: 50%;
+      margin-left: -20px;
+      top: -20px;
+    }
+  }
+
+  

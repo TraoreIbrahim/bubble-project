@@ -1,22 +1,25 @@
 import React from "react";
 import styles from "../AboutThis/AboutThis.module.css";
 import Button from "../../components/button/Button";
+import Link from "next/link";
 
 const AboutThis = () => {
   return (
-    <main className={styles.about}>
+    <main className={styles.about} id="about">
       <div className={styles.about_textBox}>
         <h2 className={styles.about_text}>
           Les petites Bubbles ne manquent pas d’air.
         </h2>
         <p className={styles.about_text_p}>
-          Envoyez une carte virtuelle 100% personnalisable avec vos textes et
-          photos ! Finies les Cartes Postales clichés des stations balnéaires ou
-          stations de ski. Vos vacances et souvenirs de voyage méritent mieux
-          que ça !
+          Grâce à Bubble Cards, créez et téléchargez vos cartes virtuelles 100%
+          personnalisables avec texte et photo ! Finies les Cartes Postales
+          clichés des stations balnéaires ou stations de ski. Vos sentiments
+          méritent mieux que ça !
         </p>
         <div style={{ display: "flex", justifyContent: "center" }}>
-          <Button text="Let's Go ! " />
+          <Link href="#process">
+            <Button text="Let's Go ! " />
+          </Link>
         </div>
       </div>
       <img
@@ -47,7 +50,8 @@ const AboutThis = () => {
           <div className={styles.about_list_text}>
             <h3 className={styles.about_list_text_h3}>Ecologique</h3>
             <p className={styles.about_list_text_p}>
-              Fini le papier, envoyez vos invitations sans détruire des arbres !
+              Fini le papier, téléchargez vos Bubble Cards et envoyez-les par
+              mail !
             </p>
           </div>
         </li>

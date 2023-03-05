@@ -14,8 +14,8 @@ const Banner = () => {
             <br /> vont vous éclater !
           </h2>
           <p className={styles.banner_text_p}>
-            Vous avez envie d'envoyer une belle carte virtuelle pour une
-            occasion particulière ou pour le plaisir ?
+            Vous avez envie de créer une belle carte virtuelle pour une occasion
+            particulière ou pour le plaisir ?
             <br />
             Vous êtes au bon endroit !
           </p>
@@ -27,7 +27,6 @@ const Banner = () => {
             alt="girl gum"
           />
         </div>
-        {/* <a href="#" className={styles.banner_arrow}></a> */}
       </main>
       <FloatingButton />
     </>

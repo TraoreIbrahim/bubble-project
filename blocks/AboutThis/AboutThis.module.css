@@ -14,9 +14,10 @@ display: flex;
 position: relative
 }
 .about_textBox{
-    max-width: 40%;
+    flex: 1;
+    /* max-width: 40%;
     position: absolute;
-    z-index: 20;
+    z-index: 20; */
 }
 .about_text{
     font-size: 2em;
@@ -39,26 +40,21 @@ position: relative
 .about_img{
     max-width: 60%; 
     position: fixed;
-    /* position: absolute; */
     right: 0px;
     top : 10%;
     z-index: -1;
-/* position : relative; */
 object-fit: cover;
-/* right: -200px; */
-
-
-
     }
 .about_listBox{
-    max-width: 50%;
+    flex: 1;
+    /* max-width: 50%;
     right: 0;
-    padding: 40px;
+    padding: 45px;
     position: absolute;
     overflow: hidden; 
     top: 50%;
     right: 0;
-    transform: translate(0%, -50%);
+    transform: translate(0%, -50%); */
     
 }
 .about_list{
@@ -99,4 +95,39 @@ border-bottom: 1px rgb(104, 31, 104) solid;
     font-family: "Baloo";
     
     /* font-weight: 300; */
+}
+
+/* Tablet and smartphone*/
+@media (max-width: 768px){
+    .about {
+        padding: 2rem 2rem;
+        flex-direction: column;
+        height: auto;
+        position: inherit;
+        flex-direction: column;
+    }
+    .about_textBox{
+        padding: 2rem 2rem;
+        max-width: 100%;
+position: inherit;
+
+    }
+    
+.about_listBox{
+    padding: 2rem 0;
+    max-width: 100%;
+    position: inherit;
+    transform:inherit;
+}
+
+.about_img{
+    max-width: 100%; 
+    position: fixed;
+    /* position: absolute; */
+    right: 0px;
+    top : 10%;
+    z-index: -1;
+/* position : relative; */
+object-fit: cover;
+    }
 }
