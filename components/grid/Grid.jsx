@@ -194,14 +194,17 @@ const Grid = () => {
           <>
             <div className={styles.imageTitle}>
               <span className={styles.span}>4.</span>
-              <p className={styles.p}>ln&apos;image.</p>
+              <p className={styles.p}>l&apos;image.</p>
             </div>
             <div className={styles.imageDescription}>
+              Récupérer votre Bubble Card !
+            </div>
+            <div className={styles.imageEditor}>
               <AliceCarousel
                 responsive={responsive}
                 mouseTracking
                 items={images.map((image) => (
-                  <Image
+                  <img
                     key={image.id}
                     src={image.urls.small}
                     alt={image.alt_description}
@@ -222,11 +225,11 @@ const Grid = () => {
           <>
             <div className={styles.viewTitle}>
               <span className={styles.span}>5.</span>
-              <p className={styles.p}>ln&apos;aperçu.</p>
+              <p className={styles.p}>l&apos;aperçu.</p>
             </div>
             <div className={styles.viewDescription}>
               <p>
-                Voici ln&apos;aperçu de votre Bubble Card avant téléchargement :
+                Voici l&apos;aperçu de votre Bubble Card avant téléchargement :
               </p>
             </div>
             <div className={styles.imageEditor}></div>
@@ -242,7 +245,7 @@ const Grid = () => {
                   }}
                   id="content"
                 >
-                  <Image
+                  <img
                     src={selectedImage.urls.small}
                     alt=""
                     className={styles.cardImage}
@@ -273,7 +276,7 @@ const Grid = () => {
           <>
             <div className={styles.uploadTitle}>
               <span className={styles.span}>6.</span>
-              <p className={styles.p}>ln&apos;upload.</p>
+              <p className={styles.p}>l&apos;upload.</p>
             </div>
             <div className={styles.uploadDescription}>
               Récupérer votre Bubble Card !
@@ -289,7 +292,7 @@ const Grid = () => {
               <div className={styles.thanksDescription}>
                 Votre Bubble Card a été téléchargée ! <br></br>Merci 😄
                 <div className={styles.img_wrapper}>
-                  <Image
+                  <img
                     className={styles.banner_img}
                     src="/images/girlNdog2.png"
                     alt="girl gum"

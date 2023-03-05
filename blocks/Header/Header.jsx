@@ -53,7 +53,7 @@ const Header = () => {
               <li className={styles.header_navbar_li}>About</li>
             </Link>
             <Link href="#process">
-              <li className={styles.header_navbar_li}>Letn&apos;s go</li>
+              <li className={styles.header_navbar_li}>Let&apos;s go</li>
             </Link>
           </ul>
         ) : !toggleNav ? (

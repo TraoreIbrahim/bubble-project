@@ -52,7 +52,8 @@
     
   .imageTitle { grid-area: imageTitle; }
   
-  .imageDescription { grid-area: imageDescription; }
+  .imageDescription { grid-area: imageDescription; color: rgb(255, 255, 255); letter-spacing: 1px;     font-size: 1em;
+    font-family: 'Montserrat', sans-serif;}
   
   .thanksDescription { grid-area: thanksDescription; font-family: 'Baloo'; text-align: center; font-size: 2em; margin: 2rem;}
   
@@ -68,11 +69,12 @@
   .uploadEditor { grid-area: iuploadEditor; }
   .viewTitle { grid-area: viewTitle; }
   
-  .viewDescription { grid-area: viewDescription; }
+  .viewDescription { grid-area: viewDescription;color: rgb(255, 255, 255); letter-spacing: 1px;     font-size: 1em;
+    font-family: 'Montserrat', sans-serif;}
   
-  .imageEditor { grid-area: imageEditor; }
+  .imageEditor { grid-area: imageEditor; margin-top: 2rem ;}
   
-  .viewEditor { grid-area: viewEditor; }
+  .viewEditor { grid-area: viewEditor; margin: 2rem 0;}
   
   .buttonWrapper { 
     grid-area: button;
@@ -104,7 +106,7 @@
     font-family: 'Baloo';
     
   }
-  .messageDescription , .emailDescription,  .uploadDescription{
+  .messageDescription , .emailDescription,  .uploadDescription, .imageDescription{
     display: flex;
     justify-content: flex-end;
   }
@@ -132,11 +134,6 @@
     height: 510px;
     border: none;
     cursor: pointer;
-  }
-  .imageDescription{
-    display: flex;
-    justify-content: center;
-    align-items: center;
   }
   .inputColorLine{
     display: flex;

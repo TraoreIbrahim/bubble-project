@@ -38,7 +38,7 @@ const ImageSlider = () => {
       responsive={responsive}
       mouseTracking
       items={images.map((image, key) => (
-        <Image
+        <img
           src={image.urls.small}
           alt={image.alt_description}
           key={key}
