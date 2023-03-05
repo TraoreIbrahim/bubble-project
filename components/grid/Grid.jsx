@@ -9,17 +9,25 @@ import DynamicTextarea from "../reactQuill/DynamicTextarea";
 import axios from "axios";
 import dynamic from "next/dynamic";
 import html2canvas from "html2canvas";
+import { Limelight } from "next/font/google";
 const Grid = () => {
-  const [color, setColor] = useState("");
-
+  const [colorSelected, setColor] = useState("");
   const [images, setImages] = useState([]);
   const [selectedImage, setSelectedImage] = useState(null);
   const [selectedTheme, setSelectedTheme] = useState(null);
-  const handleThemeChange = (event) => {
-    console.log(event.target.value);
-    setSelectedTheme(event.target.value);
-  };
+  const [message, setMessage] = useState("");
+  const [imageLoaded, setImageLoaded] = useState(false);
 
+  const colors = [
+    "#dff6e8",
+    "#bcc7f4",
+    "#bbf0f4",
+    "#dbf4b5",
+    "#adf7b6",
+    "#FFEE93",
+    "#FFC09F",
+    "#f4aed6",
+  ];
   const modules = {
     toolbar: {
       container: [
@@ -33,42 +41,40 @@ const Grid = () => {
       ],
     },
   };
-  useEffect(() => {
-    const fetchImages = async () => {
-      const result = await axios.get(
-        `https://api.unsplash.com/search/photos?query=${selectedTheme}&client_id=Qk5qEPK9_0WY3JOkbPJ-nu5VowgjTuSnJX-XcRVlDe4`
-      );
-      setImages(result.data.results); // mettre à jour les images
-    };
-    fetchImages();
-  }, [selectedTheme]); // utiliser selectedTheme comme dépendance
-
-  const handleClick = (image) => {
-    setSelectedImage(image);
-    // Afficher une boîte de dialogue ou effectuer une autre action ici
-  };
 
   const responsive = {
     0: { items: 1 },
     568: { items: 2 },
     1024: { items: 3 },
   };
-  const imageStyle = {
-    height: "400px", // Définir la hauteur souhaitée
-    width: "100%", // Définir la largeur souhaitée
-    objectFit: "cover", // Empêcher le redimensionnement de l'image
+
+  const handleThemeChange = (event) => {
+    console.log(event.target.value);
+    setSelectedTheme(event.target.value);
+  };
+  useEffect(() => {
+    const fetchImages = async () => {
+      const result = await axios.get(
+        `https://api.unsplash.com/search/photos?query=${selectedTheme}&client_id=Qk5qEPK9_0WY3JOkbPJ-nu5VowgjTuSnJX-XcRVlDe4`
+      );
+      setImages(result.data.results);
+    };
+    fetchImages();
+  }, [selectedTheme]);
+
+  const handleSelectImage = (image) => {
+    setSelectedImage(image);
   };
 
-  const [imageLoaded, setImageLoaded] = useState(false);
   const handleDownload = (e) => {
     if (imageLoaded) {
       e.preventDefault();
       const content = document.getElementById("content");
 
       html2canvas(content, {
-        useCORS: true, // Permet d'utiliser l'image depuis une URL externe
-        allowTaint: true, // Permet d'utiliser l'image depuis une URL externe
-        logging: true, // Affiche des logs dans la console
+        useCORS: true,
+        allowTaint: true,
+        logging: true,
       }).then((canvas) => {
         const link = document.createElement("a");
         link.download = "image.png";
@@ -78,18 +84,18 @@ const Grid = () => {
     }
   };
 
-  const handleImageLoad = () => {
-    setImageLoaded(true);
+  const onChangeMessage = (e) => {
+    setMessage(e);
   };
 
-  const [value, setValue] = useState("");
-  const onChange = (e) => {
-    setValue(e);
+  const handleImageLoad = () => {
+    setImageLoaded(true);
   };
 
   return (
     <>
       <form className={styles.container}>
+        {/* COLOR */}
         <div className={styles.colorTitle}>
           <span className={styles.span}>1.</span>
           <p className={styles.p}>la couleur.</p>
@@ -101,84 +107,32 @@ const Grid = () => {
         </div>
         <div className={styles.colorEditor}>
           <div className={styles.inputColorLine}>
-            <div className={styles.inputColorContainer}>
+            {colors.map((color) => (
               <div
-                style={{ backgroundColor: "#dff6e8" }}
-                className={styles.inputColor}
-                onClick={() => setColor("#dff6e8")}
+                className={
+                  color === colorSelected
+                    ? styles.ok
+                    : styles.inputColorContainer
+                }
+                style={{ backgroundColor: color }}
+                onClick={() => setColor(color)}
               ></div>
-            </div>
-            <div className={styles.inputColorContainer}>
-              <input
-                style={{ backgroundColor: "#bcc7f4" }}
-                className={styles.inputColor}
-                onClick={() => setColor("#bcc7f4")}
-              />
-            </div>
-            <div className={styles.inputColorContainer}>
-              <div
-                style={{ backgroundColor: "#bbf0f4" }}
-                className={styles.inputColor}
-                onClick={() => setColor("#bbf0f4")}
-              />
-            </div>
-            <div className={styles.inputColorContainer}>
-              <div
-                style={{ backgroundColor: "#dbf4b5" }}
-                className={styles.inputColor}
-                onClick={() => setColor("#dbf4b5")}
-              ></div>
-            </div>
-          </div>
-          <div className={styles.inputColorLine}>
-            <div className={styles.inputColorContainer}>
-              <div
-                style={{ backgroundColor: "#adf7b6" }}
-                className={styles.inputColor}
-                onClick={() => setColor("#adf7b6")}
-              ></div>
-            </div>
-            <div className={styles.inputColorContainer}>
-              <div
-                style={{ backgroundColor: "#FFEE93" }}
-                className={styles.inputColor}
-                onClick={() => setColor("#FFEE93")}
-              ></div>
-            </div>
-            <div className={styles.inputColorContainer}>
-              <div
-                style={{ backgroundColor: "#FFC09F" }}
-                className={styles.inputColor}
-                onClick={() => setColor("#FFC09F")}
-              ></div>
-            </div>
-            <div className={styles.inputColorContainer}>
-              <div
-                style={{ backgroundColor: "#f4aed6" }}
-                className={styles.inputColor}
-                onClick={() => setColor("#f4aed6")}
-              />
-            </div>
+            ))}
           </div>
         </div>
-        {color !== "" ? (
+        {/* MESSAGE */}
+        {colorSelected !== "" ? (
           <>
             <div className={styles.messageTitle}>
               <span className={styles.span}>2.</span>
               <p className={styles.p}>le message.</p>
             </div>
-            <div className={styles.messageDescription}>
-              <p>300 caractères max.</p>
-            </div>
             <div className={styles.messageEditor}>
               <ReactQuill
                 style={{
                   width: "100%",
-                  minHeight: 200,
-                  height: 300,
                   boxSizing: "border-box",
                   position: "relative",
-                  //   border: "1px solid #ebebeb",
                   fontFamily: "Open Sans Medium",
                   fontStyle: "normal",
                   fontWeight: 600,
@@ -187,16 +141,16 @@ const Grid = () => {
                 }}
                 theme="snow"
                 modules={modules}
-                onChange={onChange}
-                value={value}
+                onChange={onChangeMessage}
+                value={message}
               />
             </div>
           </>
         ) : (
           ""
         )}
-
-        {value && (
+        {/* THEME */}
+        {message && (
           <>
             <div className={styles.themeTitle}>
               <span className={styles.span}>3.</span>
@@ -219,7 +173,7 @@ const Grid = () => {
             </div>
           </>
         )}
-
+        {/* IMAGE */}
         {selectedTheme && (
           <>
             <div className={styles.imageTitle}>
@@ -235,14 +189,19 @@ const Grid = () => {
                     key={image.id}
                     src={image.urls.small}
                     alt={image.alt_description}
-                    style={imageStyle}
-                    onClick={() => handleClick(image)}
+                    className={
+                      image === selectedImage
+                        ? styles.imageSelected
+                        : styles.image
+                    }
+                    onClick={() => handleSelectImage(image)}
                   />
                 ))}
               />
             </div>
           </>
         )}
+        {/* VIEW */}
         {selectedImage && (
           <>
             <div className={styles.viewTitle}>
@@ -256,7 +215,7 @@ const Grid = () => {
                 <div
                   className={styles.card}
                   style={{
-                    backgroundColor: color,
+                    backgroundColor: colorSelected,
                     backgroundImage: "url(/images/bubbles.png)",
                     backgroundPosition: "center bottom",
                     backgroundSize: "cover",
@@ -282,14 +241,14 @@ const Grid = () => {
                       padding: "2rem",
                       borderRadius: 10,
                     }}
-                    dangerouslySetInnerHTML={{ __html: value }}
+                    dangerouslySetInnerHTML={{ __html: message }}
                   />
                 </div>
               )}
             </div>
           </>
         )}
-
+        {/* UPLOAD */}
         {selectedImage && (
           <>
             <div className={styles.uploadTitle}>
@@ -302,11 +261,9 @@ const Grid = () => {
             <div className={styles.buttonWrapper}>
               <Button
                 className={styles.button}
-                text="Upload"
+                text="⤓ Upload "
                 onClick={handleDownload}
-              >
-                Envoyer
-              </Button>
+              ></Button>
             </div>
           </>
         )}

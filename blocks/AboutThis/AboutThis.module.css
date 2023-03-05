@@ -1,5 +1,5 @@
 .about{
-   display: flex;
+    display: flex;
     align-items: center;
     justify-content: space-between;
     width: 100%;
@@ -9,20 +9,16 @@
     position: relative
 }
 .about_wrapper{
-width: 100%;
-display: flex;
-position: relative
+    width: 100%;
+    display: flex;
+    position: relative
 }
 .about_textBox{
     flex: 1;
-    /* max-width: 40%;
-    position: absolute;
-    z-index: 20; */
 }
 .about_text{
     font-size: 2em;
     font-family: 'Baloo';
-    /* color: white; */
     color: rgb(104, 31, 104);
     line-height: 1.4em;
     font-weight: 500;
@@ -47,15 +43,6 @@ object-fit: cover;
     }
 .about_listBox{
     flex: 1;
-    /* max-width: 50%;
-    right: 0;
-    padding: 45px;
-    position: absolute;
-    overflow: hidden; 
-    top: 50%;
-    right: 0;
-    transform: translate(0%, -50%); */
-    
 }
 .about_list{
     display: flex;
@@ -67,10 +54,8 @@ object-fit: cover;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    margin: 20px  0 10px 20px ;
-    /* color : #fff; */
-    color: rgb(104, 31, 104);
-    
+    margin: 0px  0 10px 20px ;
+    color: rgb(104, 31, 104);   
 }
 
 .about_list_img{
@@ -87,31 +72,39 @@ font-family: "Baloo";
 border-bottom: 1px rgb(104, 31, 104) solid;
 }
 .about_list_text_p{
-/* color: #fff; */
     letter-spacing: 1;
-    
-    /* font-size: "1.75rem"; */
-   /* text-decoration: "underline"; */
     font-family: "Baloo";
-    
-    /* font-weight: 300; */
+    font-size: 1.1em;
 }
 
-/* Tablet and smartphone*/
-@media (max-width: 768px){
-    .about {
-        padding: 2rem 2rem;
-        flex-direction: column;
-        height: auto;
-        position: inherit;
-        flex-direction: column;
-    }
-    .about_textBox{
-        padding: 2rem 2rem;
-        max-width: 100%;
-position: inherit;
 
+/* Laptop */
+@media (min-width: 768px){
+    .about {
+        min-height: auto;
+        gap: 5%;
     }
+    }
+
+/* Tablet and smartphone*/
+
+@media (max-width: 768px){
+.about {
+    padding: 2rem 2rem;
+    flex-direction: column;
+    height: auto;
+    position: inherit;
+    flex-direction: column;
+}
+.about_textBox{
+    padding: 2rem 2rem;
+    max-width: 100%;
+    position: inherit;
+    text-align: center;
+}
+.about_text_p{
+    font-size: 1em;
+}
     
 .about_listBox{
     padding: 2rem 0;
@@ -123,11 +116,9 @@ position: inherit;
 .about_img{
     max-width: 100%; 
     position: fixed;
-    /* position: absolute; */
     right: 0px;
     top : 10%;
     z-index: -1;
-/* position : relative; */
-object-fit: cover;
+    object-fit: cover;
     }
 }
